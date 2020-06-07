@@ -65,9 +65,6 @@ in {
   services.irqbalance.enable = true;
 
   environment.variables.LIBVIRT_DEFAULT_URI = "qemu:///system";
-  environment.systemPackages = with pkgs; [
-    virtmanager
-  ];
 
   virtualisation.libvirtd = {
     enable = true;

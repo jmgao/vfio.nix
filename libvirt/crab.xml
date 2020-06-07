@@ -136,47 +136,47 @@ or other application using the libvirt API.
     <controller type='pci' index='0' model='pcie-root'/>
     <controller type='pci' index='1' model='pcie-root-port'>
       <model name='pcie-root-port'/>
-      <target chassis='1' port='0x10'/>
+      <target chassis='1' port='0x10' hotplug='off'/>
       <address type='pci' domain='0x0000' bus='0x00' slot='0x02' function='0x0' multifunction='on'/>
     </controller>
     <controller type='pci' index='2' model='pcie-root-port'>
       <model name='pcie-root-port'/>
-      <target chassis='2' port='0x11'/>
+      <target chassis='2' port='0x11' hotplug='off'/>
       <address type='pci' domain='0x0000' bus='0x00' slot='0x02' function='0x1'/>
     </controller>
     <controller type='pci' index='3' model='pcie-root-port'>
       <model name='pcie-root-port'/>
-      <target chassis='3' port='0x12'/>
+      <target chassis='3' port='0x12' hotplug='off'/>
       <address type='pci' domain='0x0000' bus='0x00' slot='0x02' function='0x2'/>
     </controller>
     <controller type='pci' index='4' model='pcie-root-port'>
       <model name='pcie-root-port'/>
-      <target chassis='4' port='0x13'/>
+      <target chassis='4' port='0x13' hotplug='off'/>
       <address type='pci' domain='0x0000' bus='0x00' slot='0x02' function='0x3'/>
     </controller>
     <controller type='pci' index='5' model='pcie-root-port'>
       <model name='pcie-root-port'/>
-      <target chassis='5' port='0x14'/>
+      <target chassis='5' port='0x14' hotplug='off'/>
       <address type='pci' domain='0x0000' bus='0x00' slot='0x02' function='0x4'/>
     </controller>
     <controller type='pci' index='6' model='pcie-root-port'>
       <model name='pcie-root-port'/>
-      <target chassis='6' port='0x15'/>
+      <target chassis='6' port='0x15' hotplug='off'/>
       <address type='pci' domain='0x0000' bus='0x00' slot='0x02' function='0x5'/>
     </controller>
     <controller type='pci' index='7' model='pcie-root-port'>
       <model name='pcie-root-port'/>
-      <target chassis='7' port='0x16'/>
+      <target chassis='7' port='0x16' hotplug='off'/>
       <address type='pci' domain='0x0000' bus='0x00' slot='0x02' function='0x6'/>
     </controller>
     <controller type='pci' index='8' model='pcie-root-port'>
       <model name='pcie-root-port'/>
-      <target chassis='8' port='0x17'/>
+      <target chassis='8' port='0x17' hotplug='off'/>
       <address type='pci' domain='0x0000' bus='0x00' slot='0x02' function='0x7'/>
     </controller>
     <controller type='pci' index='9' model='pcie-root-port'>
       <model name='pcie-root-port'/>
-      <target chassis='9' port='0x8'/>
+      <target chassis='9' port='0x8' hotplug='off'/>
       <address type='pci' domain='0x0000' bus='0x00' slot='0x01' function='0x0'/>
     </controller>
     <controller type='pci' index='10' model='pcie-to-pci-bridge'>
