@@ -29,6 +29,7 @@ in {
       "kvm_amd.nested=1"
       "kvm_amd.avic=1"
 
+      "transparent_hugepage=never"
       "hugepagesz=1G"
       "hugepages=32"
 
@@ -60,6 +61,10 @@ in {
         '';
       }
     ];
+
+    kernel.sysctl = {
+      "vm.stat_interval" = 300;
+    };
   };
 
   services.irqbalance.enable = true;
