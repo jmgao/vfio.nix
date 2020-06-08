@@ -74,7 +74,13 @@ in {
     onShutdown = "shutdown";
   };
 
+  environment.systemPackages = [ pkgs.looking-glass-client ];
   nixpkgs.overlays = [
     ( import ./overlays/libvirt.nix )
+    ( import ./overlays/looking-glass-client.nix )
+  ];
+
+  systemd.tmpfiles.rules = [
+    "f /dev/shm/looking-glass 0660 jmgao qemu-libvirtd -"
   ];
 }
