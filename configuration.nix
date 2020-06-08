@@ -10,9 +10,6 @@
   ];
 
   nixpkgs.config.allowUnfree = true;
-  nixpkgs.overlays = [
-    ( import ./overlays/pcie_hotplug_off.nix )
-  ];
 
   boot.supportedFilesystems = [ "zfs" ];
 

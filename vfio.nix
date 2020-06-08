@@ -73,4 +73,8 @@ in {
     onBoot = "ignore";
     onShutdown = "shutdown";
   };
+
+  nixpkgs.overlays = [
+    ( import ./overlays/libvirt.nix )
+  ];
 }
