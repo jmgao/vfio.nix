@@ -21,6 +21,7 @@
         dmenu
         i3status
         i3lock
+        redshift
         xautolock
       ];
     };

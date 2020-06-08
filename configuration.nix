@@ -34,9 +34,13 @@
     htop
     (hwloc.override { x11Support = true; })
     lm_sensors
+    lshw
     numactl
     pciutils
     usbutils
+
+    reptyr
+    tmux
 
     git
     unzip
@@ -44,9 +48,13 @@
 
     python python3
     rustup
+    scala
 
+    autoconf
+    bison
     binutils
     cmake
+    flex
     gcc
     gdb
     gnumake
