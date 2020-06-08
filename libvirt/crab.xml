@@ -90,11 +90,10 @@ or other application using the libvirt API.
     <vmport state='off'/>
     <ioapic driver='kvm'/>
   </features>
-  <cpu mode='custom' match='exact' check='partial'>
-    <model fallback='forbid'>EPYC</model>
+  <cpu mode='host-passthrough' check='none'>
     <topology sockets='1' dies='1' cores='14' threads='2'/>
-    <cache level='3' mode='emulate'/>
     <feature policy='require' name='topoext'/>
+    <feature policy='disable' name='amd-stibp'/>
   </cpu>
   <clock offset='localtime'>
     <timer name='rtc' tickpolicy='catchup'/>

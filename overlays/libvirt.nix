@@ -9,7 +9,9 @@ self: super:
       sha256 = "12jbm3absy4i0wmd22n6cy9ws43rqphzzrp75lnbgsp7spd2qaxk";
       fetchSubmodules = true;
     };
-  });
+    patches = [ ./amd-stibp.patch ];
+  }
+);
 
   qemu = super.qemu.overrideAttrs (old: rec {
     name = "qemu-${version}";
