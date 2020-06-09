@@ -4,6 +4,7 @@
   imports = [
     ./hardware-configuration.nix
 
+    ./audio.nix
     ./docker.nix
     ./i3.nix
     ./u2f.nix
