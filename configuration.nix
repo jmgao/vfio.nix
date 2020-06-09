@@ -40,7 +40,9 @@
     pciutils
     usbutils
 
+    killall
     reptyr
+    ripgrep
     tmux
 
     git
