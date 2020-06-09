@@ -34,7 +34,7 @@ in {
       "hugepages=32"
 
       "isolcpus=domain,32-47,96-111"
-#     "nohz_full=32-47,96-111"
+      "nohz_full=32-47,96-111"
       "rcu_nocbs=32-47,96-111"
 
       "vfio-pci.ids=${lib.concatMapStringsSep "," (d: d.device) devices}"
@@ -45,9 +45,16 @@ in {
         name = "vfio";
         patch = null;
         extraConfig = ''
-          # Triggers an NPE in ZFS
+          ## Tuning
+          CPU_ISOLATION y
+
+          RCU_EXPERT y
+          RCU_NOCB_CPU y
+
+          # Triggers oops in ZFS.
           NO_HZ_FULL n
 
+          ## VFIO requirements
           KVM y
           KVM_AMD y
 
@@ -56,6 +63,7 @@ in {
           VFIO_VIRQFD y
           VFIO_PCI y
 
+          ## Hardware blacklist
           DRM_NOUVEAU n
           FB_NVIDIA n
         '';
