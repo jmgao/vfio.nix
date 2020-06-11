@@ -87,7 +87,11 @@ in {
     onShutdown = "shutdown";
   };
 
-  environment.systemPackages = [ pkgs.looking-glass-client ];
+  environment.systemPackages = [
+    pkgs.looking-glass-client
+    pkgs.virt-manager
+  ];
+
   nixpkgs.overlays = [
     ( import ./overlays/libvirt.nix )
     ( import ./overlays/looking-glass-client.nix )
