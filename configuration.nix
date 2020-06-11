@@ -1,6 +1,6 @@
-{ config, pkgs, ... }:
+{ config, pkgs, lib, ... }:
 
-{
+rec {
   imports = [
     ./hardware-configuration.nix
 
@@ -11,6 +11,12 @@
     ./vfio.nix
     ./vim.nix
   ];
+
+  nix.nixPath = [
+    "nixpkgs=/etc/nixos/nixpkgs"
+    "nixos-config=/etc/nixos/configuration.nix"
+  ];
+  environment.variables.NIX_PATH = lib.concatStringsSep ":" nix.nixPath;
 
   nixpkgs.config.allowUnfree = true;
 

@@ -1,0 +1,4 @@
+[submodule "nixpkgs"]
+  path = nixpkgs
+  branch = nixos-unstable
+  url = git@github.com:jmgao/nixpkgs.git
