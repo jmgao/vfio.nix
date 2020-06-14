@@ -66,7 +66,14 @@ in {
           ## Hardware blacklist
           DRM_NOUVEAU n
           FB_NVIDIA n
+
+          # Silence kmsg spam.
+          EDAC_AMD64 n
         '';
+      }
+      {
+        name = "kthreadd_affinity";
+        patch = ./patches/kthreadd_affinity.patch;
       }
     ];
 
