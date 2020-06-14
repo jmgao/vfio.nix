@@ -90,9 +90,11 @@ in {
     enable = true;
     qemuOvmf = true;
     qemuRunAsRoot = false;
-    onBoot = "ignore";
+    onBoot = "start";
     onShutdown = "shutdown";
   };
+
+  users.users.jmgao.extraGroups = [ "libvirtd" ];
 
   environment.systemPackages = [
     pkgs.looking-glass-client
