@@ -33,6 +33,7 @@ rec {
 
   networking.useDHCP = false;
   networking.interfaces.enp68s0.useDHCP = true;
+  networking.nameservers = [ "8.8.8.8" "8.8.4.4" ];
 
   i18n.defaultLocale = "en_US.UTF-8";
   time.timeZone = "America/Los_Angeles";
