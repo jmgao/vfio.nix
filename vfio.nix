@@ -63,10 +63,6 @@ in {
           VFIO_VIRQFD y
           VFIO_PCI y
 
-          ## Hardware blacklist
-          DRM_NOUVEAU n
-          FB_NVIDIA n
-
           # Silence kmsg spam.
           EDAC_AMD64 n
         '';
