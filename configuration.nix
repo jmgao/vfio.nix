@@ -32,8 +32,15 @@ rec {
   networking.hostId = "ea12844d";
 
   networking.useDHCP = false;
-  networking.interfaces.enp68s0.useDHCP = true;
   networking.nameservers = [ "8.8.8.8" "8.8.4.4" ];
+
+  networking.bridges.br0.interfaces = [ "enp68s0" ];
+  networking.interfaces.br0.useDHCP = true;
+  boot.kernel.sysctl = {
+    "net.bridge.bridge-nf-call-ip6tables" = 0;
+    "net.bridge.bridge-nf-call-iptables" = 0;
+    "net.bridge.bridge-nf-call-arptables" = 0;
+  };
 
   i18n.defaultLocale = "en_US.UTF-8";
   time.timeZone = "America/Los_Angeles";
