@@ -28,6 +28,11 @@
       fsType = "zfs";
     };
 
+  fileSystems."/android" =
+    { device = "tank/root/android";
+      fsType = "zfs";
+    };
+
   fileSystems."/storage" =
     { device = "tank/root/storage";
       fsType = "zfs";
