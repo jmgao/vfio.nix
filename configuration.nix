@@ -19,6 +19,8 @@ rec {
   ];
   environment.variables.NIX_PATH = lib.concatStringsSep ":" nix.nixPath;
 
+  environment.ld-linux = true;
+
   nixpkgs.config.allowUnfree = true;
 
   boot.supportedFilesystems = [ "zfs" ];
