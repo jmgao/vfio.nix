@@ -7,6 +7,7 @@ rec {
     ./audio.nix
     ./docker.nix
     ./i3.nix
+    ./manpages.nix
     ./u2f.nix
     ./vfio.nix
     ./vim.nix
