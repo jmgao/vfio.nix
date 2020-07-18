@@ -4,6 +4,7 @@ rec {
   imports = [
     ./hardware-configuration.nix
 
+    ./adb.nix
     ./audio.nix
     ./docker.nix
     ./i3.nix
