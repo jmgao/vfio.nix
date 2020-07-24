@@ -5,6 +5,7 @@ let
     { device = "10de:1b06"; } # GPU
     { device = "10de:10ef"; } # GPU audio
     { device = "1912:0014"; } # USB controller
+    { device = "1987:5012"; } # SSD
   ];
 in {
   fileSystems."/dev/hugepages1G" = {

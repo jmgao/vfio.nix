@@ -38,7 +38,7 @@ rec {
   networking.useDHCP = false;
   networking.nameservers = [ "8.8.8.8" "8.8.4.4" ];
 
-  networking.bridges.br0.interfaces = [ "enp68s0" ];
+  networking.bridges.br0.interfaces = [ "enp70s0" ];
   networking.interfaces.br0.useDHCP = true;
   boot.kernel.sysctl = {
     "net.bridge.bridge-nf-call-ip6tables" = 0;
@@ -55,6 +55,7 @@ rec {
     lm_sensors
     lshw
     numactl
+    nvme-cli
     pciutils
     usbutils
 
