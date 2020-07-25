@@ -6,6 +6,8 @@
   services.xserver = {
     enable = true;
 
+    videoDrivers = ["amdgpu"];
+
     desktopManager = {
       xterm.enable = false;
     };
@@ -27,6 +29,12 @@
     };
 
     exportConfiguration = true;
+
+    monitorSection = ''
+      Option "DPMS" "false"
+      Modeline "3440x1440_100"  531.52  3440 3448 3480 3520  1440 1496 1504 1510 +hsync -vsync
+      Option "PreferredMode" "3440x1440_100"
+    '';
 
     extraConfig = ''
       Section "Extensions"
