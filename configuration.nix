@@ -88,9 +88,11 @@ rec {
   ];
 
   programs.zsh.enable = true;
+  virtualisation.lxd.enable = true;
+
   users.users.jmgao = {
     isNormalUser = true;
-    extraGroups = [ "wheel" "systemd-journal" ];
+    extraGroups = [ "wheel" "systemd-journal" "lxd" ];
     shell = pkgs.zsh;
   };
 
