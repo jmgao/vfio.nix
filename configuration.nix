@@ -92,9 +92,10 @@ rec {
 
   users.users.jmgao = {
     isNormalUser = true;
-    extraGroups = [ "wheel" "systemd-journal" "lxd" ];
+    extraGroups = [ "wheel" "systemd-journal" "lxd" "dialout" ];
     shell = pkgs.zsh;
   };
+  services.udev.packages = [ pkgs.stlink ];
 
   system.stateVersion = "20.03";
 }
