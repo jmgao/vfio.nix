@@ -64,9 +64,6 @@ in {
           VFIO_IOMMU_TYPE1 y
           VFIO_VIRQFD y
           VFIO_PCI y
-
-          # Silence kmsg spam.
-          EDAC_AMD64 n
         '';
       }
       {

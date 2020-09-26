@@ -1,16 +1,16 @@
 diff --git a/kernel/kthread.c b/kernel/kthread.c
-index b262f47046ca..49ed59fdaf3b 100644
+index f481ab35de2f..c30f1b2b1c9e 100644
 --- a/kernel/kthread.c
 +++ b/kernel/kthread.c
-@@ -8,6 +8,7 @@
-  */
- #include <uapi/linux/sched/types.h>
+@@ -11,6 +11,7 @@
+ #include <linux/mm.h>
+ #include <linux/mmu_context.h>
  #include <linux/sched.h>
 +#include <linux/sched/isolation.h>
+ #include <linux/sched/mm.h>
  #include <linux/sched/task.h>
  #include <linux/kthread.h>
- #include <linux/completion.h>
-@@ -572,7 +573,7 @@ int kthreadd(void *unused)
+@@ -608,7 +609,7 @@ int kthreadd(void *unused)
  	/* Setup a clean context for our children to inherit. */
  	set_task_comm(tsk, "kthreadd");
  	ignore_signals(tsk);
@@ -19,3 +19,26 @@ index b262f47046ca..49ed59fdaf3b 100644
  	set_mems_allowed(node_states[N_MEMORY]);
  
  	current->flags |= PF_NOFREEZE;
+diff --git a/kernel/sched/isolation.c b/kernel/sched/isolation.c
+index 808244f3ddd9..f23e139c8994 100644
+--- a/kernel/sched/isolation.c
++++ b/kernel/sched/isolation.c
+@@ -172,6 +172,18 @@ static int __init housekeeping_isolcpus_setup(char *str)
+ 			continue;
+ 		}
+ 
++		if (!strncmp(str, "wq,", 3)) {
++			str += 3;
++			flags |= HK_FLAG_WQ;
++			continue;
++		}
++
++		if (!strncmp(str, "rcu,", 4)) {
++			str += 4;
++			flags |= HK_FLAG_RCU;
++			continue;
++		}
++
+ 		/*
+ 		 * Skip unknown sub-parameter and validate that it is not
+ 		 * containing an invalid character.

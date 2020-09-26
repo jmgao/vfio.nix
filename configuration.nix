@@ -30,7 +30,7 @@ rec {
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
 
-  boot.kernelPackages = pkgs.linuxPackages_5_6;
+  boot.kernelPackages = pkgs.linuxPackages_5_8;
 
   networking.hostName = "atlas";
   networking.hostId = "ea12844d";
