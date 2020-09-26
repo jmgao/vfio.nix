@@ -93,7 +93,6 @@ or other application using the libvirt API.
   <cpu mode='host-passthrough' check='none'>
     <topology sockets='1' dies='1' cores='14' threads='2'/>
     <feature policy='require' name='topoext'/>
-    <feature policy='disable' name='amd-stibp'/>
   </cpu>
   <clock offset='localtime'>
     <timer name='rtc' tickpolicy='catchup'/>
