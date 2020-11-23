@@ -35,7 +35,7 @@ in {
       "hugepagesz=1G"
       "hugepages=32"
 
-      "isolcpus=domain,wq,rcu,32-47,96-111"
+      "isolcpus=domain,wq,rcu,kthread,32-47,96-111"
       "nohz_full=32-47,96-111"
       "vfio-pci.ids=${lib.concatMapStringsSep "," (d: d.device) devices}"
     ];
