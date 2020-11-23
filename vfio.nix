@@ -94,11 +94,6 @@ in {
     pkgs.virt-manager
   ];
 
-  nixpkgs.overlays = [
-    ( import ./overlays/libvirt.nix )
-    ( import ./overlays/looking-glass-client.nix )
-  ];
-
   systemd.tmpfiles.rules = [
     "f /dev/shm/looking-glass 0660 jmgao qemu-libvirtd -"
   ];
