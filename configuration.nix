@@ -91,6 +91,8 @@ rec {
     bash
 
     wine
+    blender
+    unityhub
   ];
 
   programs.zsh.enable = true;
