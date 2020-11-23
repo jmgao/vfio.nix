@@ -80,6 +80,7 @@ rec {
     bison
     binutils
     cmake
+    dfu-util
     flex
     gcc
     gdb
