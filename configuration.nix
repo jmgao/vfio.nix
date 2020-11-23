@@ -61,6 +61,7 @@ rec {
     nvme-cli
     pciutils
     usbutils
+    boot.kernelPackages.turbostat
 
     killall
     reptyr
