@@ -24,6 +24,36 @@ or other application using the libvirt API.
     <allocation mode='immediate'/>
   </memoryBacking>
   <vcpu placement='static'>28</vcpu>
+  <vcpus>
+    <vcpu id='0' enabled='yes' hotpluggable='no'/>
+    <vcpu id='1' enabled='yes' hotpluggable='yes'/>
+    <vcpu id='2' enabled='yes' hotpluggable='yes'/>
+    <vcpu id='3' enabled='yes' hotpluggable='yes'/>
+    <vcpu id='4' enabled='yes' hotpluggable='yes'/>
+    <vcpu id='5' enabled='yes' hotpluggable='yes'/>
+    <vcpu id='6' enabled='yes' hotpluggable='yes'/>
+    <vcpu id='7' enabled='yes' hotpluggable='yes'/>
+    <vcpu id='8' enabled='yes' hotpluggable='yes'/>
+    <vcpu id='9' enabled='yes' hotpluggable='yes'/>
+    <vcpu id='10' enabled='yes' hotpluggable='yes'/>
+    <vcpu id='11' enabled='yes' hotpluggable='yes'/>
+    <vcpu id='12' enabled='yes' hotpluggable='yes'/>
+    <vcpu id='13' enabled='yes' hotpluggable='yes'/>
+    <vcpu id='14' enabled='yes' hotpluggable='yes'/>
+    <vcpu id='15' enabled='yes' hotpluggable='yes'/>
+    <vcpu id='16' enabled='yes' hotpluggable='yes'/>
+    <vcpu id='17' enabled='yes' hotpluggable='yes'/>
+    <vcpu id='18' enabled='yes' hotpluggable='yes'/>
+    <vcpu id='19' enabled='yes' hotpluggable='yes'/>
+    <vcpu id='20' enabled='yes' hotpluggable='yes'/>
+    <vcpu id='21' enabled='yes' hotpluggable='yes'/>
+    <vcpu id='22' enabled='yes' hotpluggable='yes'/>
+    <vcpu id='23' enabled='yes' hotpluggable='yes'/>
+    <vcpu id='24' enabled='yes' hotpluggable='yes'/>
+    <vcpu id='25' enabled='yes' hotpluggable='yes'/>
+    <vcpu id='26' enabled='yes' hotpluggable='yes'/>
+    <vcpu id='27' enabled='yes' hotpluggable='yes'/>
+  </vcpus>
   <iothreads>1</iothreads>
   <cputune>
     <vcpupin vcpu='0' cpuset='32'/>
@@ -92,6 +122,7 @@ or other application using the libvirt API.
   </features>
   <cpu mode='host-passthrough' check='none'>
     <topology sockets='1' dies='1' cores='14' threads='2'/>
+    <cache mode='passthrough'/>
     <feature policy='require' name='topoext'/>
     <feature policy='require' name='invtsc'/>
   </cpu>
@@ -203,28 +234,21 @@ or other application using the libvirt API.
     <input type='keyboard' bus='ps2'/>
     <hostdev mode='subsystem' type='pci' managed='yes'>
       <source>
-        <address domain='0x0000' bus='0x4d' slot='0x00' function='0x0'/>
+        <address domain='0x0000' bus='0x4e' slot='0x00' function='0x0'/>
       </source>
       <address type='pci' domain='0x0000' bus='0x05' slot='0x00' function='0x0' multifunction='on'/>
     </hostdev>
     <hostdev mode='subsystem' type='pci' managed='yes'>
       <source>
-        <address domain='0x0000' bus='0x4d' slot='0x00' function='0x1'/>
+        <address domain='0x0000' bus='0x4e' slot='0x00' function='0x1'/>
       </source>
       <address type='pci' domain='0x0000' bus='0x05' slot='0x00' function='0x1'/>
     </hostdev>
     <hostdev mode='subsystem' type='pci' managed='yes'>
       <source>
-        <address domain='0x0000' bus='0x4b' slot='0x00' function='0x0'/>
+        <address domain='0x0000' bus='0x4c' slot='0x00' function='0x0'/>
       </source>
       <address type='pci' domain='0x0000' bus='0x03' slot='0x00' function='0x0'/>
-    </hostdev>
-    <hostdev mode='subsystem' type='usb' managed='yes'>
-      <source>
-        <vendor id='0x8087'/>
-        <product id='0x0029'/>
-      </source>
-      <address type='usb' bus='0' port='1'/>
     </hostdev>
     <memballoon model='none'/>
     <shmem name='looking-glass'>
