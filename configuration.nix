@@ -49,6 +49,9 @@ rec {
   i18n.defaultLocale = "en_US.UTF-8";
   time.timeZone = "America/Los_Angeles";
 
+  services.sshd.enable = true;
+  programs.mosh.enable = true;
+
   environment.systemPackages = with pkgs; [
     htop
     (hwloc.override { x11Support = true; })
@@ -83,6 +86,7 @@ rec {
     ninja
     pkg-config
     strace
+    bash
 
     wine
   ];
