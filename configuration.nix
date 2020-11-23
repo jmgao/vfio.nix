@@ -99,7 +99,11 @@ rec {
     extraGroups = [ "wheel" "systemd-journal" "lxd" "dialout" ];
     shell = pkgs.zsh;
   };
-  services.udev.packages = [ pkgs.stlink ];
+  services.udev.packages = [ pkgs.openocd pkgs.stlink ];
+  services.udev.extraRules = ''
+    SUBSYSTEMS=="usb", ATTRS{idVendor}=="1209", ATTRS{idProduct}=="214c", MODE:="666"
+    SUBSYSTEMS=="usb", ATTRS{idVendor}=="1209", ATTRS{idProduct}=="214d", MODE:="666"
+  '';
 
   system.stateVersion = "20.03";
 }
