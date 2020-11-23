@@ -42,7 +42,11 @@
       EndSection
     '';
   };
-  services.compton.enable = true;
+
+  services.picom = {
+    enable = true;
+    vSync = true;
+  };
 
   environment.systemPackages = with pkgs; [
     alacritty
